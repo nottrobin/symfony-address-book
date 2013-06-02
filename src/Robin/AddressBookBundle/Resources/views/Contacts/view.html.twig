@@ -1,0 +1,37 @@
+{% extends "RobinAddressBookBundle::layout.html.twig" %}
+
+{% block headline %}Edit contact: <small>{{ contact.firstName }} ({{ contact.id }})</small>{% endblock %}
+
+{% block content %}
+
+<form name="update" action="?method=put" method="post">
+    <label for="field-first-name">First name</label>
+    <input id="field-first-name" name="first-name" value="{{ contact.firstName }}" />
+
+    <label for="field-last-name">Last name</label>
+    <input name="last-name" value="{{ contact.lastName }}" />
+
+    <label for="field-address-line-one">Address line one</label>
+    <input name="address-line-one" value="{{ contact.addressLineOne }}" />
+
+    <label for="field-address-line-two">Address line two</label>
+    <input name="address-line-two" value="{{ contact.addressLineTwo }}" />
+
+    <label for="field-city">City</label>
+    <input name="city" value="{{ contact.city }}" />
+
+    <label for="field-postcode">Postcode</label>
+    <input name="postcode" value="{{ contact.postcode }}" />
+
+    <label for="field-home-number">Home number</label>
+    <input name="home-number" value="{{ contact.homeNumber }}" />
+
+    <label for="field-mobile-number">Mobile number</label>
+    <input name="mobile-number" value="{{ contact.mobileNumber }}" />
+
+    <button>submit</button>
+</form>
+
+<p><a href="/contacts">Back to list</a></p>
+
+{% endblock %}

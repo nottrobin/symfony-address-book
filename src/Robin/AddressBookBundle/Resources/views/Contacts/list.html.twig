@@ -1,0 +1,74 @@
+{% extends "RobinAddressBookBundle::layout.html.twig" %}
+
+{% block headline %}Contacts list{% endblock %}
+
+{% block content %}
+
+{% if contacts %}
+<table>
+    <thead>
+        <tr>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Address</td>
+            <td>Home number</td>
+            <td>Mobile number</td>
+            <td>&nbsp;</td>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>
+                {{ contact.addressLineOne }}<br/>
+                {{ contact.addressLineTwo }}<br/>
+                {{ contact.city }}<br/>
+                {{ contact.postcode }}
+            </td>
+            <td>{{ contact.homeNumber }}</td>
+            <td>{{ contact.mobileNumber }}</td>
+            <td>
+                <a href="/contacts/{{ contact.id }}">edit</a> | <a href="/contacts/{{ contact.id }}?method=delete">delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>There are no contacts in the database. Why don't you add one?</p>
+{% endif %}
+
+<h2>Add new contact</h2>
+
+<form name="create" method="post">
+    <label for="field-first-name">First name</label>
+    <input id="field-first-name" name="first-name" />
+
+    <label for="field-last-name">Last name</label>
+    <input name="last-name" />
+
+    <label for="field-address-line-one">Address line one</label>
+    <input name="address-line-one" />
+
+    <label for="field-address-line-two">Address line two</label>
+    <input name="address-line-two" />
+
+    <label for="field-city">City</label>
+    <input name="city" />
+
+    <label for="field-postcode">Postcode</label>
+    <input name="postcode" />
+
+    <label for="field-home-number">Home number</label>
+    <input name="home-number" />
+
+    <label for="field-mobile-number">Mobile number</label>
+    <input name="mobile-number" />
+
+    <button>submit</button>
+</form>
+
+{% endblock %}
