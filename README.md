@@ -1,5 +1,5 @@
-Symfony Address Book app
-========================
+Address book
+============
 
 An address book app based off the [symfony standard](https://github.com/symfony/symfony-standard) project.
 
