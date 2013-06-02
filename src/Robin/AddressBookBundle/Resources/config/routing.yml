@@ -3,3 +3,17 @@ _welcome:
     defaults:
         _controller: RobinAddressBookBundle:Default:index
         _format: html
+
+robin_address_book_contacts:
+    pattern:  /contacts.{_format}
+    defaults:
+        _controller: RobinAddressBookBundle:Contacts:index
+        _format: html
+    requirements: { _format: html|json }
+
+robin_address_book_contact:
+    pattern:  /contacts/{contactId}.{_format}
+    defaults:
+        _controller: RobinAddressBookBundle:Contacts:contact
+        _format: html
+    requirements: { _format: html|json }
