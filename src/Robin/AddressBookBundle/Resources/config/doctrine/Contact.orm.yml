@@ -1,0 +1,26 @@
+Robin\AddressBookBundle\Entity\Contact:
+    type: entity
+    table: contact
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        firstName:
+            type: text
+        lastName:
+            type: text
+        addressLineOne:
+            type: text
+        addressLineTwo:
+            type: text
+        addressLineTwo:
+            type: text
+        city:
+            type: text
+        postcode:
+            type: text
+        homeNumber:
+            type: text
+        mobileNumber:
+            type: text
