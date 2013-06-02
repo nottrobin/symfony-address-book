@@ -1,0 +1,5 @@
+_welcome:
+    pattern:  /
+    defaults:
+        _controller: RobinAddressBookBundle:Default:index
+        _format: html

@@ -1,0 +1,20 @@
+{% extends "RobinAddressBookBundle::layout.html.twig" %}
+
+{% block headline 'Introduction' %}
+
+{% block content %}
+
+<p>This is a basic address book app, providing simple view, create, update and delete functions.</p>
+
+<p>You can access it in two formats:</p>
+
+<ul>
+    <li>As a simple web page - view the <a href="/contacts">contacts list web-page</a></li>
+    <li>As a JSON web service - view the <a href="/contacts.json">contacts list in JSON format</a></li>
+</ul>
+
+<p>The API follows the basic guidelines provided in Apigee's <a href="http://info.apigee.com/Portals/62317/docs/web%20api.pdf">Web API Design ebook</a>.</p>
+
+<p><a href="http://github.com/nottrobin/symfony-address-book">View the source code</a> on github.com</p>
+
+{% endblock %}
