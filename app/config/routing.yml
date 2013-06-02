@@ -1,0 +1,4 @@
+robin_address_book:
+    resource: "@RobinAddressBookBundle/Resources/config/routing.yml"
+    prefix:   /
+
